@@ -11,7 +11,7 @@ const configuration = {
     client_id: "827231e9-9e10-4cd9-9b70-0886687023de",
     client_secret: "66546A576E5A7234753778214125442A472D4B6150645367556B587032733576",
     grant_types: ["authorization_code"],
-    redirect_uris: ["http://localhost:8080/auth/login/callback", "https://oidcdebugger.com/debug"],
+    redirect_uris: ["https://test-adb2c.onrender.com/auth/login/callback", "https://oidcdebugger.com/debug"],
     response_types: ["code",],
   }],
   pkce: {
@@ -23,7 +23,7 @@ const configuration = {
     },
   },
 };
-const oidc = new Provider('http://localhost:3000', configuration);
+const oidc = new Provider('https://test-adb2c.onrender.com/', configuration);
 app.use("/oidc", oidc.callback());
 app.listen(3000, function () {
   console.log('OIDC is listening on port 3000!');
